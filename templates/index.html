@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Iris Species Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head> 
+
+<body background="https://cdn.miscellaneoushi.com/1920x1080/20121018/purple%20flowers%20irises%201920x1080%20wallpaper_www.miscellaneoushi.com_96.jpg">
+ <div class="login">
+	<h1 style="text-align:center">Iris Species Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+	<h3 style="text-align:center;">V14</h3>
+	<p style="text-align:center;"><input type="number" name="V14" min="-19" max= "10" required="required" /></p>
+
+	<h3 style="text-align:center;">V10</h3>
+        <p style="text-align:center;"><input type="number" name="V10" min="-24" max= "23"  required="required" /></p>
+
+	<h3 style="text-align:center;">V12</h3>
+	<p style="text-align:center;"><input type="number" name="V12" min="-18" max= "8"  required="required" /></p>
+
+    <h3 style="text-align:center;">V11</h3>
+	<p style="text-align:center;"><input type="number" name="V11" min="-4" max= "12"  required="required" /></p>
+
+	<h3 style="text-align:center;">V4</h3>
+		<p style="text-align:center;"><input type="number" name="V4" min="-5" max= "16" required="required" /></p>
+    <h3 style="text-align:center;">V17</h3>
+		<p style="text-align:center;"><input type="number" name="V17" min="-25" max= "9" required="required" /></p>
+    <h3 style="text-align:center;">V3</h3>
+		<p style="text-align:center;"><input type="number" name="V3" min="-48" max= "9" required="required" /></p>
+    <h3 style="text-align:center;">V16</h3>
+		<p style="text-align:center;"><input type="number" name="V16" min="-14" max= "17" required="required" /></p>
+
+
+	<h2 style="text-align:center;"></h2>	
+        <p style="text-align:center;"><button type="submit" class="btn btn-primary btn-block btn-large">Predict Iris Species</button></p>
+    </form>
+   <h2 style="text-align:center;">{{ prediction_text }}</h2>
+
+ </div>
+</body>
+</html>

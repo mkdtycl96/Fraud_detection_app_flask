@@ -8,7 +8,7 @@ app = Flask(__name__)
     #model = pickle.load(m)
 #with open('features.pkl', 'rb') as m:
     #features = pickle.load(m)
-model = pickle.load(open('rf_model_rfe', 'rb'))
+model = pickle.load(open('rf2_model.pkl', 'rb'))
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -33,11 +33,6 @@ def results():
     output=["Fraud" if prediction[0]==1 else "Not Fraud"]
     return jsonify(output)
 
-
-int_features = [float(x) for x in request.form.values()]
-final_features = [np.array(int_features)]
-print(final_features)
-print("hello")
 
 
 
